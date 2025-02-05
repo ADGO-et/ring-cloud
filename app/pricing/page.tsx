@@ -1,9 +1,10 @@
+import PricingPage from '@/components/pricing-comp/Pricing'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-      pricing
+      <PricingPage />
     </div>
   )
 }
