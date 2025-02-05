@@ -43,10 +43,12 @@ export default function PricingPage() {
 
   return (
     <div className="max-w-6xl my-20 mx-auto p-6">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">Plans & Pricing</h2>
+      <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+        Plans & Pricing
+      </h2>
 
       {/* Pricing Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {pricingPlans.map((plan) => (
           <div
             key={plan.name}
@@ -54,11 +56,11 @@ export default function PricingPage() {
               selectedPlan === plan.name
                 ? "bg-blue-900 text-white"
                 : "bg-white text-gray-800"
-            }`}
+            } flex flex-col items-center text-center`}
           >
             <h3 className="text-xl font-bold">{plan.price}/month</h3>
             <p className="mt-2 font-semibold">{plan.name}</p>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-4 space-y-2 text-left w-full">
               {plan.features.map((feature, index) => (
                 <li key={index} className="flex items-center space-x-2">
                   <span className="text-lg">✔️</span>
@@ -81,18 +83,18 @@ export default function PricingPage() {
       </div>
 
       {/* Subscription Form */}
-      <div className="bg-white shadow-lg rounded-lg p-6 mt-10">
-        <h3 className="text-xl font-bold mb-4">Register</h3>
-        <div className="space-y-4">
-          <Input placeholder="Company Name" />
-          <Input placeholder="Address" />
+      <div className="bg-white shadow-lg rounded-lg p-16 mt-10 w-full max-w-xl mx-auto ">
+        {/* <h3 className="text-xl font-bold mb-4 text-center">Register</h3> */}
+        <div className="space-y-6">
+          <Input placeholder="Company Name" className="w-full" />
+          <Input placeholder="Address" className="w-full" />
           <h4 className="font-semibold mt-4">Contact Personnel Information</h4>
-          <Input placeholder="Full Name" />
-          <Input type="email" placeholder="Email" />
-          <Input type="tel" placeholder="Phone Number" />
+          <Input placeholder="Full Name" className="w-full" />
+          <Input type="email" placeholder="Email" className="w-full" />
+          <Input type="tel" placeholder="Phone Number" className="w-full" />
 
           <h4 className="font-semibold mt-4">Subscription Plan</h4>
-          <div className="flex space-x-4">
+          <div className="flex flex-wrap gap-2 justify-center">
             {pricingPlans.map((plan) => (
               <Button
                 key={plan.name}
