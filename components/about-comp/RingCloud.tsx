@@ -20,8 +20,8 @@ export default function RingCloudPBX() {
         </div>
         {/* Right Side - Content */}
         <div className="space-y-6 ">
-          <div>
-            <h2 className="text-2xl font-bold">YOUR TRUSTED RING CLOUD PBX</h2>
+          <div className="border-l-2 border-b-2 border-black pl-4 pb-4">
+            <h2 className="text-2xl font-bold">YOUR TRUSTED<br/>RING CLOUD PBX</h2>
             <p className="mt-4 text-gray-700">
               Welcome to Ring Cloud PBX, where your communication needs meet
               innovative solutions and dedicated support. Our journey in the
@@ -47,13 +47,13 @@ export default function RingCloudPBX() {
       </div>
 
       {/* Why Choose Us Section */}
-      <div className="bg-yellow-400 py-10 px-6 mt-10 rounded-lg shadow-lg max-w-6xl mx-auto">
+      <div className="bg-yellow-400 py-10 px-6 mt-10 rounded-2xl shadow-lg max-w-6xl mx-auto">
         <h3 className="text-2xl font-bold text-center mb-6">
           WHY CHOOSE RING CLOUD PBX
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6  rounded-lg p-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 rounded-lg p-6">
           {features.map((feature, index) => (
-            <div key={index} className="border border-gray-300 p-4 rounded-md">
+            <div key={index} className="border border-black p-4">
               <h4 className="font-semibold text-lg">{feature.title}</h4>
               <p className="text-gray-700 mt-2">{feature.description}</p>
             </div>
@@ -63,7 +63,7 @@ export default function RingCloudPBX() {
       {/* About Us Section */}
       <div className="max-w-6xl mx-auto mt-10 p-6">
         <h3 className="text-xl font-bold  pb-2">ABOUT US</h3>
-        <p className="mt-4 text-gray-700 border-b-2 pb-2">
+        <p className="mt-4 text-gray-700 shadow-md p-4 shadow-primaryColor rounded-xl">
           At Ring Cloud PBX, we specialize in transforming communication for
           businesses through cutting-edge cloud technology. In partnership with
           WebSprix, we empower organizations with reliable, secure, and scalable
@@ -74,9 +74,9 @@ export default function RingCloudPBX() {
       </div>
 
       {/* Our Mission Section */}
-      <div className="max-w-6xl mx-auto mt-10 p-6">
+      <div className="max-w-6xl mx-auto mt-5 p-6">
         <h3 className="text-xl font-bold  pb-2">OUR MISSION</h3>
-        <p className="mt-4 text-gray-700 border-b-2 pb-2">
+        <p className="mt-4 text-gray-700 shadow-md p-4 shadow-primaryColor rounded-xl">
           To empower businesses with comprehensive cloud-based communication
           solutions that enhance collaboration, optimize service excellence, and
           transform customer engagement.
@@ -84,9 +84,9 @@ export default function RingCloudPBX() {
       </div>
 
       {/* Our Vision Section */}
-      <div className="max-w-6xl mx-auto mt-10 p-6">
+      <div className="max-w-6xl mx-auto mt-5 p-6">
         <h3 className="text-xl font-bold  pb-2">OUR VISION</h3>
-        <p className="mt-4 text-gray-700 border-b-2 pb-2">
+        <p className="mt-4 text-gray-700 shadow-md p-4 shadow-primaryColor rounded-xl">
           To be the leading provider of innovative communication
           solutions, setting benchmarks in reliability, scalability, and
           customer satisfaction.
