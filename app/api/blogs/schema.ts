@@ -27,8 +27,12 @@ const blogSchema = Joi.object({
   title: Joi.string().min(3).required(),
   description: Joi.string().min(3).required(),
   category: Joi.string().min(3).required(),
-  thumbnail: Joi.string().uri().optional(),
-  thumbnailPublicId: Joi.string().min(1).optional(),
+  thumbnail: Joi.alternatives()
+    .try(Joi.string().uri(), Joi.string().valid(""))
+    .optional(),
+  thumbnailPublicId: Joi.alternatives()
+    .try(Joi.string().uri(), Joi.string().valid(""))
+    .optional(),
   content: Joi.array().items(contentSchema).min(1).required(),
 });
 
@@ -36,8 +40,12 @@ const blogUpdateSchema = Joi.object({
   title: Joi.string().min(3).optional(),
   description: Joi.string().min(3).optional(),
   category: Joi.string().min(3).optional(),
-  thumbnail: Joi.string().uri().optional(),
-  thumbnailPublicId: Joi.string().min(3).optional(),
+  thumbnail: Joi.alternatives()
+    .try(Joi.string().uri(), Joi.string().valid(""))
+    .optional(),
+  thumbnailPublicId: Joi.alternatives()
+    .try(Joi.string().uri(), Joi.string().valid(""))
+    .optional(),
   content: Joi.array().items(contentUpdateSchema).optional(),
 });
 
