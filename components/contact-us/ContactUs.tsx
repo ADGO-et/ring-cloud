@@ -2,7 +2,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { FaYoutube, FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
-import Image from "next/image";
 import MapComponent from "./MapComponent";
 
 export default function ContactUs() {

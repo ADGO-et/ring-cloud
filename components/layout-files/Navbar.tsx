@@ -52,7 +52,7 @@ export default function Navbar() {
         }
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6">
+        <ul className="hidden lg:flex space-x-6">
           {links.map(
             (item) => (
               <Link href={item.url} key={item.url} className={`hover:text-gray-300 cursor-pointer ${pathname === item.url ? 'border-b-2' : ''}`} >
@@ -63,7 +63,7 @@ export default function Navbar() {
         </ul>
 
         {/* Buttons */}
-        <div className="hidden md:flex space-x-4">
+        <div className="hidden lg:flex space-x-4">
           <Link href='' className="bg-white text-primary px-4 py-1 rounded-md hover:bg-primaryColor hover:text-white">
             Login
           </Link>
@@ -74,7 +74,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <Sheet>
-          <SheetTrigger className="md:hidden">
+          <SheetTrigger className="lg:hidden">
             <Menu className="w-6 h-6" />
           </SheetTrigger>
           <SheetContent side="left" className="bg-primaryColor text-white">

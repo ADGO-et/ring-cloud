@@ -14,8 +14,8 @@ export default function HeroSection() {
       ];
 
   return (
-    <div className="bg-white py-12 lg:px-32">
-        <div className="relatve md:w-3/5">
+    <div className="bg-white py-12 lg:px-20">
+        <div className="relatve md:w-3/5 lg:px-12">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
             Empower Your Communications with Ringcloud
           </h1>
