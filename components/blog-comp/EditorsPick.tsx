@@ -27,7 +27,7 @@ const EditorsPick: React.FC = () => {
   return (
     <div className="w-full p-2 max-w-6xl mx-auto mt-10">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold text-blue-900">Editors Pick</h2>
+        <h2 className="text-xl font-bold text-primaryColor">Editors Pick</h2>
         <a href="#" className="text-blue-600 hover:underline text-sm">View All</a>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
