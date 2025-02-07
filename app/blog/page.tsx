@@ -11,9 +11,10 @@ import YouMightLoveSection from '@/components/blog-comp/(blog2)/YouMightLoveSect
 const page = () => {
   return (
     <div>
-      <YouMightLoveSection />
       <Header />
       <BlogLayout />
+      <YouMightLoveSection />
+      {/*  */}
       <MajorBlog/>
       <SecondaryVlog/>
       <Banner />
