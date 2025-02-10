@@ -78,6 +78,10 @@ const config: Config = {
   					height: '0'
   				}
   			},
+			// marquee: {
+			// 	from: { transform: "translateX(0)" },
+			// 	to: { transform: "translateX(-50%)" },
+			// },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',

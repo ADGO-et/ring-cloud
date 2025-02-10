@@ -5,7 +5,7 @@ import Stat from '@/components/home-comp/Stat'
 import ServicesPage from '@/components/home-comp/OurServices'
 import FAQ from '@/components/home-comp/FAQ'
 import CustomerService from '@/components/home-comp/CustomerService'
-// import Experiences from '@/components/home-comp/Experiences'
+import Experiences from '@/components/home-comp/Experiences'
 
 const page = () => {
   return (
@@ -16,7 +16,7 @@ const page = () => {
       </div>
       <Stat/>
       <ServicesPage/>
-      {/* <Experiences/> */}
+      <Experiences/>
       <div className='md:my-20 md:mx-40 mx-6 my-20'>
         <FAQ/>
       </div>

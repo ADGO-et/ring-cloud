@@ -63,14 +63,14 @@ export default function Navbar() {
         </ul>
 
         {/* Buttons */}
-        <div className="hidden lg:flex space-x-4">
+        {/* <div className="hidden lg:flex space-x-4">
           <Link href='' className="bg-white text-primary px-4 py-1 rounded-md hover:bg-primaryColor hover:text-white">
             Login
           </Link>
           <Link href='' className="text-white px-4 py-1 rounded-md">
             Sign up
           </Link>
-        </div>
+        </div> */}
 
         {/* Mobile Menu */}
         <Sheet>
@@ -87,14 +87,14 @@ export default function Navbar() {
                 )
               )}
             </ul>
-            <div className="mt-6 space-y-3 flex flex-col">
+            {/* <div className="mt-6 space-y-3 flex flex-col">
               <Link href='' className="w-full bg-white text-primary px-4 py-2 rounded-md hover:bg-primaryColor hover:text-white">
                 Login
               </Link>
               <Link href='' className="w-full text-white border border-white px-4 py-2 rounded-md">
                 Sign up
               </Link>
-            </div>
+            </div> */}
           </SheetContent>
         </Sheet>
       </div>
