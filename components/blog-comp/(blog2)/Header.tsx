@@ -9,7 +9,7 @@ const Header = () => {
             alt="Hero Image"
             layout="fill"
             objectFit="cover"
-            className="brightness-75 h-screen"
+            className="brightness-75 object-cover"
         />
         <div className="relative z-10">
             <h1 className="text-3xl font-bold">User Innovation & Entrepreneurship</h1>

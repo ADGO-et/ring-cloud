@@ -1,34 +1,32 @@
-'use client';
-import { useEffect, useRef } from "react";
+"use client";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
-declare global {
-  interface Window {
-    initMap: () => void;
-  }
-}
+const containerStyle = {
+  width: "100%",
+  height: "210px",
+};
 
-export default function MapComponent() {
-  const mapRef = useRef<HTMLDivElement>(null);
-  const googleApiKey = ''
+const MapComponent = () => {
+  const lat = 8.96363;
+  const lng = 38.83552;
 
-  useEffect(() => {
-    if (mapRef.current && !mapRef.current.hasChildNodes()) {
-      const script = document.createElement("script");
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${googleApiKey}&callback=initMap`;
-      script.async = true;
-      script.defer = true;
-      document.body.appendChild(script);
+  const center = {
+    lat: lat,
+    lng: lng,
+  };
 
-      window.initMap = () => {
-        if (mapRef.current) {
-          new google.maps.Map(mapRef.current, {
-            center: { lat: 9.145, lng: 40.4897 },
-            zoom: 6,
-          });
-        }
-      };
-    }
-  }, []);
+  return (
+    <LoadScript googleMapsApiKey="AIzaSyCz61eQinGa5Jd43DrRFQBDR3x0GzTyL4s">
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={18}
+        mapTypeId="satellite"
+      >
+        <Marker position={center} />
+      </GoogleMap>
+    </LoadScript>
+  );
+};
 
-  return <div ref={mapRef} className="w-full h-[210px] rounded-lg shadow-md" />;
-}
+export default MapComponent;

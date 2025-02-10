@@ -5,9 +5,10 @@ import { FaArrowTrendUp, FaBell } from "react-icons/fa6";
 
 const NewsletterSection: React.FC = () => {
   return (
-    <div className="bg-primaryColor text-white py-16 px-6 md:px-16 w-full my-6 mx-auto flex flex-col md:flex-row justify-between items-center">
+    <div className="bg-primaryColor">
+      <div className="bg-primaryColor text-white py-16 px-6 md:px-16 w-[85%] my-6 mx-auto flex flex-col md:flex-row justify-between items-center">
       {/* Left Section */}
-      <div className="md:w-2/3">
+      <div className="md:w-2/3 space-y-8">
         <div className="flex items-center space-x-2 mb-4">
           <div className="bg-yellow-400 p-2 rounded-full">
             <FaArrowTrendUp />
@@ -36,9 +37,9 @@ const NewsletterSection: React.FC = () => {
       </div>
       
       {/* Right Section */}
-      <div className="md:w-1/3 mt-8 md:mt-0">
+      <div className="md:w-1/3 mt-8 md:mt-0 space-y-8">
         <h2 className="text-yellow-400 text-lg font-bold">Top Columnist</h2>
-        <div className="mt-4 space-y-4">
+        <div className="mt-4 space-y-8">
           {[
             { name: "Lorem Ipsum", title: "CTO of Great Company Inc." },
             { name: "Lorem Ipsum", title: "Digital Marketing Manager" },
@@ -54,6 +55,7 @@ const NewsletterSection: React.FC = () => {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };
