@@ -52,11 +52,50 @@ export const getLatestBlogs = async (
   }
 };
 
-export const getBlogs = async (request: NextRequest): Promise<NextResponse> => {
+export const getBlogs = async (): Promise<any> => {
   try {
     const blogs = await query<RowDataPacket[]>(
-      `
-      SELECT 
+      `SELECT 
+        b.id, b.title, b.thumbnail, b.thumbnailPublicId, b.description, b.category, b.createdAt, b.updatedAt,
+        JSON_ARRAYAGG(
+          JSON_OBJECT(
+            'id', bc.id,
+            'type', bc.type,
+            'value', bc.value,
+            'createdAt', bc.createdAt,
+            'updatedAt', bc.updatedAt
+          )
+        ) AS blogcontent
+      FROM blog b
+      LEFT JOIN blogcontent bc ON b.id = bc.blogId
+      GROUP BY b.id`
+    );
+    blogs.forEach((blog) => {
+      blog.content = blog.content ? JSON.parse(blog.content) : [];
+    });
+
+    return new Response(JSON.stringify({ success: true, blogs }), {
+      status: 200,
+    });
+  } catch (error) {
+    return new Response(
+      JSON.stringify({
+        success: false,
+        message: "Something unexpected occurred.",
+        error: error,
+      }),
+      { status: 500 }
+    );
+  }
+};
+
+export const fetchBlogsFromController = async (): Promise<{
+  success: boolean;
+  blogs: any[];
+}> => {
+  try {
+    const blogs = await query<RowDataPacket[]>(
+      `SELECT 
         b.id, b.title, b.thumbnail, b.thumbnailPublicId, b.description, b.category, b.createdAt, b.updatedAt,
         JSON_ARRAYAGG(
           JSON_OBJECT(
@@ -70,34 +109,28 @@ export const getBlogs = async (request: NextRequest): Promise<NextResponse> => {
       FROM blog b
       LEFT JOIN blogcontent bc ON b.id = bc.blogId
       GROUP BY b.id
-      `
+      ORDER BY b.createdAt DESC`
     );
 
     blogs.forEach((blog) => {
       blog.content = blog.content ? JSON.parse(blog.content) : [];
     });
 
-    return NextResponse.json({ success: true, blogs }, { status: 200 });
+    return { success: true, blogs };
   } catch (error) {
-    return NextResponse.json(
-      {
-        success: false,
-        message: error,
-        error: "Something unexpected occurred.",
-      },
-      { status: 500 }
-    );
+    console.error("Error fetching blogs:", error);
+    return { success: false, blogs: [] };
   }
 };
 
-export const getBlog = async (
-  request: NextRequest,
-  { params: { id } }: Props
-): Promise<NextResponse> => {
+export const getBlog = async ({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Response> => {
   try {
     const blogs = await query<RowDataPacket[]>(
-      `
-      SELECT 
+      `SELECT 
         b.id, b.title, b.thumbnail, b.thumbnailPublicId, b.description, b.category, b.createdAt, b.updatedAt,
         JSON_ARRAYAGG(
           JSON_OBJECT(
@@ -111,31 +144,33 @@ export const getBlog = async (
       FROM blog b
       LEFT JOIN blogcontent bc ON b.id = bc.blogId
       WHERE b.id = ?
-      GROUP BY b.id
-      `,
-      [parseInt(id)]
+      GROUP BY b.id`,
+      [parseInt(params.id)]
     );
-    if (blogs.length === 0)
-      return NextResponse.json(
-        {
+
+    if (blogs.length === 0) {
+      return new Response(
+        JSON.stringify({
           success: false,
-          error: `Blog with id: '${id}' not found`,
-        },
+          error: `Blog with id: '${params.id}' not found`,
+        }),
         { status: 404 }
       );
+    }
 
     const blog = blogs[0];
-
     blog.content = blog.content ? JSON.parse(blog.content) : [];
 
-    return NextResponse.json({ blog, success: true }, { status: 200 });
+    return new Response(JSON.stringify({ blog, success: true }), {
+      status: 200,
+    });
   } catch (error) {
-    return NextResponse.json(
-      {
+    return new Response(
+      JSON.stringify({
         error: "Something unexpected occurred.",
         message: error,
         success: false,
-      },
+      }),
       { status: 500 }
     );
   }
