@@ -12,6 +12,9 @@ import {
   DialogClose,
 } from '@/components/ui/dialog';
 import { IoCheckmarkCircle } from "react-icons/io5";
+import TitleFadeIn from '@/components/animation/TitleFadeIn';
+import SlideFrom from '@/components/animation/SlideFrom';
+import PoppingWrapper from '@/components/animation/Popping';
 
 const pricingPlans = [
   {
@@ -37,27 +40,26 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen flex justify-center items-center">
       <div className="max-w-6xl my-20 mx-auto p-6">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Plans & Pricing</h2>
+        <TitleFadeIn title="Plans & Pricing" className="text-2xl font-bold text-gray-800 mb-6 text-center" />
         <div className="shadow-lg p-6 rounded-2xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-end">
-            {pricingPlans.map((plan) => (
-              <div
-                key={plan.name}
-                className={`p-6 rounded-2xl ${plan.name === 'Advanced' ? 'bg-blue-900 text-white min-h-[400px]' : 'bg-white text-gray-800 min-h-[350px]'} flex flex-col items-center text-center`}
-              >
+            {pricingPlans.map((plan, planIndex) => (
+              <SlideFrom key={plan.name} from="left" className={`p-6 rounded-2xl ${plan.name === 'Advanced' ? 'bg-blue-900 text-white min-h-[400px]' : 'bg-white text-gray-800 min-h-[350px]'} flex flex-col items-center text-center`} delay={planIndex * 0.2}>
                 {plan.name === 'Advanced' && (
-                  <div className='flex w-full justify-end items-center mb-6'>
-                    <p className='text-white bg-black w-fit py-1 px-3 text-end text-xs rounded-xl'>Most Popular</p>
-                  </div>
+                  <PoppingWrapper degree={3}>
+                    <div className='flex w-full justify-end items-center mb-6'>
+                      <p className='text-white bg-black w-fit py-1 px-3 text-end text-xs rounded-xl'>Most Popular</p>
+                    </div>
+                  </PoppingWrapper>
                 )}
                 <h3 className="text-xl font-bold">{plan.price}/month</h3>
                 <p className="mt-2 font-semibold">{plan.name}</p>
                 <ul className="mt-4 space-y-4 text-left w-full">
-                  {plan.features.map((feature, index) => (
-                    <li key={index} className="flex items-center space-x-2">
+                  {plan.features.map((feature, featureIndex) => (
+                    <SlideFrom key={featureIndex} from="left" className="flex items-center space-x-2" delay={planIndex * 0.2 + featureIndex * 0.1}>
                       <span className="text-lg"><IoCheckmarkCircle className={plan.name === 'Advanced' ? '' : 'text-primaryColor'}/></span>
                       <span>{feature}</span>
-                    </li>
+                    </SlideFrom>
                   ))}
                 </ul>
                 <Dialog>
@@ -76,7 +78,6 @@ export default function PricingPage() {
                         Fill in your details to proceed with the subscription.
                       </DialogDescription>
                     </DialogHeader>
-                    {/* Wrap input fields in a form */}
                     <form className="space-y-4">
                       <Input placeholder="Company Name" className="w-full" />
                       <Input placeholder="Address" className="w-full" />
@@ -93,7 +94,7 @@ export default function PricingPage() {
                     </DialogClose>
                   </DialogContent>
                 </Dialog>
-              </div>
+              </SlideFrom>
             ))}
           </div>
         </div>

@@ -2,8 +2,11 @@
 
 import { CheckCircle } from "lucide-react";
 import Image from "next/image";
-import heroimg from '@/public/assets/hero.svg'
-import sideimg from '@/public/assets/sidepic.svg'
+import heroimg from '@/public/assets/hero.svg';
+import sideimg from '@/public/assets/sidepic.svg';
+import FadeIn from "../animation/FadeIn";
+import SlideFrom from "../animation/SlideFrom";
+import RotateWrapper from "../animation/RotateWrapper";
 
 export default function HeroSection() {
 
@@ -16,14 +19,16 @@ export default function HeroSection() {
   return (
     <div className="bg-white py-12 lg:px-20">
         <div className="relatve md:w-3/5 lg:px-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Empower Your Communications with Ringcloud
-          </h1>
-          <p className="mt-4 text-gray-600">
+          <RotateWrapper direction="vertical">
+            <FadeIn className="text-3xl md:text-4xl font-bold text-gray-900">
+              Empower Your Communications with Ringcloud
+            </FadeIn>
+          </RotateWrapper>
+          <FadeIn className="mt-4 text-gray-600">
             At Ringcloud, we believe in simplifying and elevating the way businesses connect. Our
             state-of-the-art communication solutions help you stay agile, secure, and efficient—no
             matter your size or industry.
-          </p>
+          </FadeIn>
           <Image src={sideimg} alt="side image" className="absolute md:block hidden top-28 left-10" />
             <style jsx global>{`
                 img[alt="side image"]:hover {
@@ -33,23 +38,21 @@ export default function HeroSection() {
             `}</style>
         </div>
 
-        {/* Right Image & Features */}
-        <div className="flex flex-col md:flex-row items-center justify-between md:justify-center mt-14">
-            <div className="">
+        <div className="mt-14 flex flex-col md:flex-row items-center md:justify-between">
+          <SlideFrom from="left" className="w-fit md:w-1/2">
             <Image
               src={heroimg} 
               alt="Team meeting"
-              className="object-cover"
+              className="object-cover rounded-lg w-[700px]"
             />
-            </div>
+          </SlideFrom>
 
-          {/* Features List */}
-          <ul className="flex flex-col items-start space-y-3 md:ml-8">
+          <ul className="mt-8 md:mt-0 flex flex-col space-y-3">
             {Points.map((text, index) => (
-              <li key={index} className="flex items-center text-gray-700">
-                <CheckCircle className="text-primaryColor w-5 h-5 mr-2" />
-                {text}
-              </li>
+              <FadeIn key={index} className="flex items-start text-gray-700" delay={index * 0.3}>
+                <CheckCircle className="text-primaryColor w-5 h-5 mr-2 flex-shrink-0" />
+                <span>{text}</span>
+              </FadeIn>
             ))}
           </ul>
         </div>
