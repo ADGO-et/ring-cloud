@@ -9,7 +9,6 @@ export const pool = mysql.createPool({
   connectionLimit: 10,
   queueLimit: 0,
 });
-
 export const query = async <T extends RowDataPacket[] | ResultSetHeader>(
   sql: string,
   params?: any[]

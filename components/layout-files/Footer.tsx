@@ -8,6 +8,7 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import PoppingWrapper from "../animation/Popping";
 
 export default function Footer() {
   return (
@@ -68,7 +69,9 @@ export default function Footer() {
 
         {/* Right Section - Newsletter */}
         <form>
-          <h3 className="text-lg font-semibold text-yellow-400">Join Link Newsletter</h3>
+          <PoppingWrapper degree={2}>
+            <h3 className="text-lg font-semibold text-yellow-400">Join Link Newsletter</h3>
+          </PoppingWrapper>
           <p className="text-gray-300">Your Email</p>
           <Input
             type="email"

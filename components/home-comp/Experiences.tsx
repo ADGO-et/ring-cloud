@@ -1,9 +1,12 @@
 'use client';
 import React from "react";
 import Image from "next/image";
-import sideimg from '@/public/assets/sidepic.svg'
-import cardimage from '@/public/assets/customer.svg'
+import sideimg from '@/public/assets/sidepic.svg';
+import cardimage from '@/public/assets/customer.svg';
 import Compimg from "./Compimg";
+import RotateWrapper from "../animation/RotateWrapper";
+import FadeIn from "../animation/FadeIn";
+import SlideFrom from "../animation/SlideFrom";
 
 const services = [
   {
@@ -39,13 +42,18 @@ const Experiences = () => {
                       transition: transform 0.5s;
                   }
               `}</style>
-        <h2 className="text-2xl lg:text-3xl font-bold mb-4">Experience the Power of Process.</h2>
-        <p className="text-gray-600 max-w-2xl"> Instead of focusing just on the problem, we take the holistic approach so we can build a.</p>
-        <p className="text-gray-600 mb-10 max-w-2xl">solution that works end to end</p>
+        <RotateWrapper direction="vertical">
+          <h2 className="text-2xl lg:text-3xl font-bold mb-4">Experience the Power of Process.</h2>
+        </RotateWrapper>
+        <FadeIn className="text-gray-600 max-w-2xl">
+          Instead of focusing just on the problem, we take the holistic approach so we can build a solution that works end to end.
+        </FadeIn>
       </div>
       <div className="w-full lg:w-[70%]">
         {services.map((service, index) => (
-          <Compimg key={index} image={service.image} title={service.title} description={service.description} clsx={index} />
+          <SlideFrom key={index} from={index % 2 === 0 ? "left" : "right"} className="mb-8">
+            <Compimg image={service.image} title={service.title} description={service.description} clsx={index} />
+          </SlideFrom>
         ))}
       </div>
     </div>
