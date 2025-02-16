@@ -1,5 +1,8 @@
 import React from "react";
 import Image from 'next/image';
+import TitleFadeIn from '../../animation/TitleFadeIn';
+import SlideFrom from '../../animation/SlideFrom';
+import RotateWrapper from '../../animation/RotateWrapper';
 
 const Header = () => {
     return (
@@ -12,8 +15,14 @@ const Header = () => {
             className="brightness-75 object-cover"
         />
         <div className="relative z-10">
-            <h1 className="text-3xl font-bold">User Innovation & Entrepreneurship</h1>
-            <p className="text-lg">You Can Do It</p>
+            <RotateWrapper>
+                <SlideFrom from="left" className="text-3xl font-bold">
+                    <TitleFadeIn title="User Innovation & Entrepreneurship" className=""/>
+                </SlideFrom>
+            </RotateWrapper>
+            <SlideFrom from="right" className="text-lg" delay={0.5}>
+                <TitleFadeIn title="You Can Do It" className="" />
+            </SlideFrom>
         </div>
         </div>
     );

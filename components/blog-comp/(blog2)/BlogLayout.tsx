@@ -1,5 +1,6 @@
 import { getBlog } from "@/app/api/blogs/controllers/article";
 import Image from "next/image";
+import FadeIn from "../../animation/FadeIn"; // Import the FadeIn component
 
 const BlogLayout = async ({ params }: { params: { id: string } }) => {
   const response = await getBlog({ params });
@@ -14,21 +15,26 @@ const BlogLayout = async ({ params }: { params: { id: string } }) => {
   return (
     <div className="container mx-auto my-12 p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div className="md:col-span-2 md:w-[75%] mx-auto">
-        <h1 className="text-2xl font-bold">{blog.title}</h1>
-        <p className="font-semibold mt-4">{blog.description}</p>
+        <FadeIn className="text-2xl font-bold">
+          <h1>{blog.title}</h1>
+        </FadeIn>
+        <FadeIn className="font-semibold mt-4">
+          <p>{blog.description}</p>
+        </FadeIn>
 
         {blog.thumbnail && (
-          <Image
-            src={blog.thumbnail}
-            alt={blog.title}
-            width={800}
-            height={400}
-            className="mt-4 rounded-lg"
-          />
+          <FadeIn className="mt-4 rounded-lg">
+            <Image
+              src={blog.thumbnail}
+              alt={blog.title}
+              width={800}
+              height={400}
+            />
+          </FadeIn>
         )}
 
         {blog.content.map((section: any, index: number) => (
-          <div key={index} className="mt-6 border-t pt-4">
+          <FadeIn key={index} className="mt-6 border-t pt-4">
             {section.type === "heading" && (
               <h2 className="text-lg font-bold">{section.value}</h2>
             )}
@@ -54,7 +60,7 @@ const BlogLayout = async ({ params }: { params: { id: string } }) => {
                 allowFullScreen
               ></iframe>
             )}
-          </div>
+          </FadeIn>
         ))}
       </div>
 
