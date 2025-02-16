@@ -11,7 +11,7 @@ interface cardProps {
 const Compimg = ({image, title, description, clsx}: cardProps) => {
   return (
     <div className={`relative w-full ${clsx % 2 === 1 ? 'flex justify-end' : 'flex justify-start'} mb-4`}>
-        <div className={`flex flex-col lg:flex-row items-center p-6 gap-3 lg:w-[60%] border-b-2 md:border-0`}>
+        <div className={`flex flex-col lg:flex-row items-center p-6 gap-12 lg:w-[60%] border-b-2 md:border-0`}>
             <Image src={image} alt="" width={300} height={300} className={`${clsx % 2 === 1 ? 'lg:order-2' : ''} border-[#FFD700] border-[15px] lg:border-[28px] shadow-lg rounded-3xl`} />
             <div className={`flex flex-col place-items-start gap-2 ${clsx % 2 === 1 ? '' : ''}`}>
                 <h1 className='font-bold text-primaryColor text-lg'>{title}</h1>
