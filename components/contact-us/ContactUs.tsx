@@ -3,17 +3,18 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { FaYoutube, FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 import MapComponent from "./MapComponent";
+import TitleFadeIn from "@/components/animation/TitleFadeIn";
+import SlideFrom from "@/components/animation/SlideFrom";
+import FadeIn from "@/components/animation/FadeIn";
 
 export default function ContactUs() {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="bg-white rounded-lg shadow-lg p-10 max-w-4xl w-full">
-        <h2 className="text-center text-xl font-bold text-blue-900 border-b pb-2">
-          Get In Touch
-        </h2>
+        <TitleFadeIn title="Get In Touch" className="text-center text-xl font-bold text-blue-900 border-b pb-2" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-6">
           {/* Contact Form */}
-          <div>
+          <SlideFrom from="left" className="space-y-4">
             <h3 className="text-lg font-semibold mb-4">Leave us a message</h3>
             <form className="space-y-4">
               <div>
@@ -48,10 +49,10 @@ export default function ContactUs() {
               </div>
               <Button className="w-full bg-blue-900 text-white">Send</Button>
             </form>
-          </div>
+          </SlideFrom>
 
           {/* Contact Info */}
-          <div className="space-y-4">
+          <FadeIn className="space-y-4">
             <p className="text-gray-700">
               Ring Cloud PBX, Lorum Ipsum A.A, Ethiopia.
             </p>
@@ -68,7 +69,7 @@ export default function ContactUs() {
 
             {/* Embedded Map */}
             <MapComponent />
-          </div>
+          </FadeIn>
         </div>
       </div>
     </div>

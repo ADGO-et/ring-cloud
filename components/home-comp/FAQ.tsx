@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import Link from "next/link";
+import RotateWrapper from "../animation/RotateWrapper";
+import FadeIn from "../animation/FadeIn";
 
 export default function FAQ() {
     const [openItem, setOpenItem] = useState<string | null>(null);
@@ -33,10 +35,12 @@ export default function FAQ() {
   return (
     <section className="flex flex-col md:flex-row justify-between items-center">
       <div className="basis-full md:basis-2/5 text-center md:text-left">
-        <h2 className="text-4xl font-bold">Frequently Asked <br/> Questions</h2>
-        <p className="mt-2 text-gray-500">
+        <RotateWrapper direction="vertical">
+          <h2 className="text-4xl font-bold">Frequently Asked <br/> Questions</h2>
+        </RotateWrapper>
+        <FadeIn className="mt-2 text-gray-500">
           Still need help? <Link href='' className="text-primaryColor font-semibold cursor-pointer hover:underline">Get Help Now</Link>
-        </p>
+        </FadeIn>
       </div>
 
       <Accordion 
@@ -46,14 +50,15 @@ export default function FAQ() {
         onValueChange={(value) => setOpenItem(value)}
       >
         {faqData.map((faq, index) => (
-          <AccordionItem 
-            key={index} 
-            value={`item-${index}`} 
-            className={`p-4 rounded-lg ${openItem === `item-${index}` ? "bg-gray-100 font-bold" : ""}`}
-          >
-            <AccordionTrigger>{faq.question}</AccordionTrigger>
-            <AccordionContent className="">{faq.answer}</AccordionContent>
-          </AccordionItem>
+          <FadeIn key={index} className="">
+            <AccordionItem 
+              value={`item-${index}`} 
+              className={`p-4 rounded-lg ${openItem === `item-${index}` ? "bg-gray-100 font-bold" : ""}`}
+            >
+              <AccordionTrigger>{faq.question}</AccordionTrigger>
+              <AccordionContent className="">{faq.answer}</AccordionContent>
+            </AccordionItem>
+          </FadeIn>
         ))}
       </Accordion>
     </section>

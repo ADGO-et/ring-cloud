@@ -1,9 +1,12 @@
 import React from "react";
 import { FaArrowTrendUp, FaBell } from "react-icons/fa6";
+import RotateWrapper from "../animation/RotateWrapper";
+import FadeIn from "../animation/FadeIn";
+import PoppingWrapper from "../animation/Popping";
 
 const NewsletterSection: React.FC = () => {
   return (
-    <div className="bg-primaryColor">
+    <FadeIn className="bg-primaryColor">
       <div className="bg-primaryColor text-white py-16 px-6 md:px-16 w-[85%] my-6 mx-auto flex flex-col md:flex-row justify-between items-center">
         {/* Left Section */}
         <div className="md:w-2/3 space-y-8">
@@ -15,9 +18,11 @@ const NewsletterSection: React.FC = () => {
               Get in touch with us to see how to
             </span>
           </div>
-          <h1 className="text-2xl md:text-3xl font-bold">
-            Start from the best proven <br /> Lorem Ipsum
-          </h1>
+          <RotateWrapper direction="vertical">
+            <h1 className="text-2xl md:text-3xl font-bold">
+              Start from the best proven <br /> Lorem Ipsum
+            </h1>
+          </RotateWrapper>
           <p className="mt-2 text-gray-300 text-sm">
             Molestie nunc non blandit massa enim. Venenatis urna cursus eget
             nunc scelerisque viverra mauris in. Id aliquet risus feugiat in ante
@@ -29,10 +34,12 @@ const NewsletterSection: React.FC = () => {
               placeholder="Type your email address..."
               className="p-3 rounded-l-lg w-64 text-gray-900 focus:outline-none"
             />
+            <PoppingWrapper degree={2}>
             <button className="bg-yellow-400 flex items-center gap-2 text-black font-semibold px-4 py-3 rounded-r-lg hover:bg-yellow-500 transition">
               <FaBell />
               <p> Get Updates </p>
             </button>
+            </PoppingWrapper>
           </div>
         </div>
 
@@ -56,7 +63,7 @@ const NewsletterSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </FadeIn>
   );
 };
 

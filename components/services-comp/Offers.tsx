@@ -1,4 +1,7 @@
+'use client'
 import { FaShieldAlt, FaLightbulb, FaLeaf, FaLaptopHouse, FaUserTie } from "react-icons/fa";
+import RotateWrapper from "../animation/RotateWrapper";
+import FadeIn from "../animation/FadeIn";
 
 const features = [
   {
@@ -31,30 +34,26 @@ const features = [
 const Offers = () => {
   return (
     <section className="py-16 bg-white mb-10 space-y-8">
+      <RotateWrapper direction="vertical">
         <h1 className="text-primaryColor text-3xl font-bold text-center">WHAT WE OFFER</h1>
-        <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.slice(0,3).map((feature, index) => (
-            <div
-                key={index}
-                className="bg-white shadow-lg rounded-lg p-6 text-center flex flex-col items-center transition-transform transform hover:scale-105"
-            >
+      </RotateWrapper>
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features.slice(0, 3).map((feature, index) => (
+            <FadeIn key={index} className="bg-white shadow-lg rounded-lg p-6 text-center flex flex-col items-center transition-transform transform hover:scale-105">
               <div className="p-4 bg-gray-100 rounded-full">{feature.icon}</div>
               <h3 className="text-lg font-semibold text-gray-800 mt-4">{feature.title}</h3>
               <p className="text-gray-600 mt-2">{feature.description}</p>
-            </div>
+            </FadeIn>
           ))}
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:w-[70%] mx-auto mt-6">
           {features.slice(3).map((feature, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-lg rounded-lg p-6 text-center flex flex-col items-center transition-transform transform hover:scale-105"
-            >
+            <FadeIn key={index} className="bg-white shadow-lg rounded-lg p-6 text-center flex flex-col items-center transition-transform transform hover:scale-105">
               <div className="p-4 bg-gray-100 rounded-full">{feature.icon}</div>
               <h3 className="text-lg font-semibold text-gray-800 mt-4">{feature.title}</h3>
               <p className="text-gray-600 mt-2">{feature.description}</p>
-            </div>
+            </FadeIn>
           ))}
         </div>
       </div>
