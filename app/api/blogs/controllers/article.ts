@@ -123,11 +123,10 @@ export const fetchBlogsFromController = async (): Promise<{
   }
 };
 
-export const getBlog = async ({
-  params,
-}: {
-  params: { id: string };
-}): Promise<Response> => {
+export const getBlog = async (
+  request: NextRequest, // Added request parameter here.
+  { params }: { params: { id: string } }
+): Promise<Response> => {
   try {
     const blogs = await query<RowDataPacket[]>(
       `SELECT 

@@ -1,9 +1,11 @@
 import { getBlog } from "@/app/api/blogs/controllers/article";
 import Image from "next/image";
 import FadeIn from "../../animation/FadeIn"; // Import the FadeIn component
+import { NextRequest } from "next/server";
 
 const BlogLayout = async ({ params }: { params: { id: string } }) => {
-  const response = await getBlog({ params });
+  const request = new NextRequest("");
+  const response = await getBlog(request, { params });
 
   if (!response || !response.ok) {
     return <p className="text-center text-red-500">Blog not found.</p>;
