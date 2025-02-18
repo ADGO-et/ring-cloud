@@ -3,7 +3,7 @@
 import { Button } from "../ui/button";
 import RotateWrapper from "../animation/RotateWrapper";
 import FadeIn from "../animation/FadeIn";
-import SlideFrom from "../animation/SlideFrom";
+import { motion } from "framer-motion";
 
 export default function Stat() {
   return (
@@ -25,7 +25,13 @@ export default function Stat() {
         </div>
 
         {/* Right Stats */}
-        <SlideFrom from="right" className="flex flex-col space-y-8 items-center w-full">
+        <motion.div 
+          className="flex flex-col space-y-8 items-center w-full"
+          initial={{ x: -100 }}
+          whileInView={{ x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="flex flex-col md:flex-row items-center w-full gap-6 md:gap-0">
             <FadeIn className="text-center md:border-r md:border-gray-500 px-6">
               <p className="text-lg text-gray-300">Our Services</p>
@@ -43,7 +49,7 @@ export default function Stat() {
               <div className="h-1 bg-blue-400 w-1/3 rounded-full absolute left-0"></div>
             </div>
           </FadeIn>
-        </SlideFrom>
+        </motion.div>
       </div>
     </section>
   );

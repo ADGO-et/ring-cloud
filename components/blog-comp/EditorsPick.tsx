@@ -6,7 +6,7 @@ const EditorsPick = async () => {
   const { success, blogs } = await fetchBlogsFromController();
 
   return (
-    <div className="w-full p-2 max-w-6xl mx-auto mt-10">
+    <div className="w-full p-2 max-w-7xl mx-auto mt-10">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold text-primaryColor">Editors Pick</h2>
         <Link href="/blog" className="text-blue-600 hover:underline text-sm">

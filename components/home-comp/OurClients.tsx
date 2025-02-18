@@ -37,7 +37,7 @@ const extendedClients = [...clients, ...clients];
 
 const OurClients = () => {
   return (
-    <section className="text-center md:py-40 shadow-custom mb-10">
+    <section className="text-center md:py-40 shadow-custom mb-10 py-6">
       <FadeIn className="inline-block">
         <RotateWrapper direction="vertical">
           <TitleFadeIn title="Our Clients" className="text-3xl font-bold text-gray-800" />

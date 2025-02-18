@@ -6,7 +6,6 @@ import cardimage from '@/public/assets/customer.svg';
 import Compimg from "./Compimg";
 import RotateWrapper from "../animation/RotateWrapper";
 import FadeIn from "../animation/FadeIn";
-import SlideFrom from "../animation/SlideFrom";
 
 const services = [
   {
@@ -45,16 +44,16 @@ const Experiences = () => {
         <RotateWrapper direction="vertical">
           <h2 className="text-2xl lg:text-3xl font-bold mb-4">Experience the Power of Process.</h2>
         </RotateWrapper>
-        <FadeIn className="text-gray-600 max-w-2xl flex flex-col items-end">
+        <FadeIn className="text-gray-600 max-w-3xl flex flex-col items-end">
           <span>Instead of focusing just on the problem, we take the holistic approach so we can build a</span>
           <span>solution that works end to end.</span>
         </FadeIn>
       </div>
       <div className="w-full lg:w-[70%]">
         {services.map((service, index) => (
-          <SlideFrom key={index} from={index % 2 === 0 ? "left" : "right"} className="mb-8">
+          <FadeIn key={index} className="mb-8">
             <Compimg image={service.image} title={service.title} description={service.description} clsx={index} />
-          </SlideFrom>
+          </FadeIn>
         ))}
       </div>
     </div>

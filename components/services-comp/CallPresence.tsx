@@ -27,7 +27,7 @@ const CallPresence = () => {
       </div>
       
       {/* Image Section */}
-      <SlideFrom from="right" className="md:w-1/2 mt-6 md:mt-0 flex justify-center">
+      <SlideFrom from="right" className="md:w-1/2 mt-6 md:mt-0 flex justify-center basis-4/5">
         <Image 
           src={coverimg}
           alt="Call Presence" 

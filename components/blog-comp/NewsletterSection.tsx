@@ -3,13 +3,15 @@ import { FaArrowTrendUp, FaBell } from "react-icons/fa6";
 import RotateWrapper from "../animation/RotateWrapper";
 import FadeIn from "../animation/FadeIn";
 import PoppingWrapper from "../animation/Popping";
+import { AiFillCrown,AiFillCalendar,AiFillFire } from "react-icons/ai";
+
 
 const NewsletterSection: React.FC = () => {
   return (
     <FadeIn className="bg-primaryColor">
-      <div className="bg-primaryColor text-white py-16 px-6 md:px-16 w-[85%] my-6 mx-auto flex flex-col md:flex-row justify-between items-center">
+      <div className="bg-primaryColor text-white py-40 px-6 md:px-16 w-[85%] my-6 mx-auto flex flex-col md:flex-row justify-between items-center">
         {/* Left Section */}
-        <div className="md:w-2/3 space-y-8">
+        <div className="md:w-2/3 space-y-10">
           <div className="flex items-center space-x-2 mb-4">
             <div className="bg-yellow-400 p-2 rounded-full">
               <FaArrowTrendUp />
@@ -53,7 +55,8 @@ const NewsletterSection: React.FC = () => {
               { name: "Lorem Ipsum", title: "Development Manager" },
             ].map((columnist, index) => (
               <div key={index} className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
+                {/* <div className="w-10 h-10 bg-gray-300 rounded-full"></div> */}
+                {index === 0 ? (<AiFillCalendar className="text-green-400 text-2xl"/>) : index === 1 ? (<AiFillCrown className="text-yellow-400 text-2xl" />) : (<AiFillFire className="text-red-400 text-2xl" />)}
                 <div>
                   <h3 className="font-semibold">{columnist.name}</h3>
                   <p className="text-sm text-gray-300">{columnist.title}</p>

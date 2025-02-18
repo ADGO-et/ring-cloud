@@ -17,7 +17,7 @@ const services = [
 
 const ServicesPage = () => {
   return (
-    <div className="p-16 bg-yellow-400 text-center text-gray-900">
+    <div className="p-16 bg-yellow-400 text-center text-gray-900 overflow-hidden">
       <div className="flex flex-col items-center space-y-8">
         <RotateWrapper direction="horizontal">
           <h3 className="text-sm uppercase tracking-wide">All Our Services</h3>
