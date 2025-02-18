@@ -7,12 +7,12 @@ import SlideFrom from "../animation/SlideFrom";
 
 export default function Stat() {
   return (
-    <section className="bg-primaryColor text-white py-12 px-6 lg:px-20 my-16">
+    <section className="bg-primaryColor text-white py-40 px-6 lg:px-20 my-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Left Content */}
-        <div>
+        <div className="space-y-12">
           <RotateWrapper direction="vertical">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <h2 className="text-3xl md:text-5xl font-bold text-white">
               Let The Number <br /> Speaks For You
             </h2>
           </RotateWrapper>

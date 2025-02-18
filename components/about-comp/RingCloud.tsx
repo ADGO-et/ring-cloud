@@ -7,7 +7,7 @@ import SlideFrom from "../animation/SlideFrom";
 
 export default function RingCloudPBX() {
   return (
-    <div className="bg-white text-gray-900 my-20">
+    <div className="bg-white text-gray-900 my-40">
       {/* Hero Section */}
       <div className="max-w-6xl mx-auto p-6 grid md:grid-cols-2 gap-6 items-start">
         {/* Left Side - Image */}
@@ -15,39 +15,45 @@ export default function RingCloudPBX() {
           <Image
             src={aboutImg}
             alt="Ring Cloud PBX Building"
-            width={300}
-            height={400}
-            className="rounded-lg shadow-lg"
+            className="rounded-lg shadow-lg object-cover w-full "
           />
         </SlideFrom>
         {/* Right Side - Content */}
-        <div className="space-y-6">
-          <div className="border-l-2 border-b-2 border-black pl-4 pb-4">
-            <RotateWrapper direction="vertical">
-              <h2 className="text-2xl font-bold">YOUR TRUSTED<br/>RING CLOUD PBX</h2>
-            </RotateWrapper>
-            <FadeIn className="mt-4 text-gray-700">
-              Welcome to Ring Cloud PBX, where your communication needs meet
-              innovative solutions and dedicated support. Our journey in the
-              cloud communication industry is defined by a commitment to
-              excellence, a passion for empowering businesses, and an unwavering
-              dedication to reliability and service. With us, you can trust that
-              your communication is in expert hands, enabling you to focus on
-              what truly matters—growing your business.
-            </FadeIn>
-          </div>
-          <div>
-            <RotateWrapper direction="vertical">
-              <h2 className="text-2xl font-bold">OUR STORY</h2>
-            </RotateWrapper>
-            <FadeIn className="mt-4 text-gray-700">
-              Founded by seasoned communication experts, Ring Cloud PBX was
-              created to transform business communication by prioritizing client
-              needs. Recognizing the complexities of cloud technology, our
-              founders aimed to simplify the process, empowering businesses with
-              tailored solutions and essential support. At Ring Cloud PBX, your
-              success drives everything we do.
-            </FadeIn>
+        <div className="flex justify-start items-center">
+          <div className="space-y-6 w-[75%]">
+            <div className="border-l-2 border-b-2 border-black pl-4 pb-4">
+              <RotateWrapper direction="vertical">
+                <h2 className="text-2xl font-bold">YOUR TRUSTED<br/>RING CLOUD PBX</h2>
+              </RotateWrapper>
+              <FadeIn className="mt-4 text-gray-700">
+                Welcome to Ring Cloud PBX, where your communication needs meet
+                innovative solutions and dedicated support. Our journey in the
+                cloud communication industry is defined by a commitment to
+                excellence, a passion for empowering businesses, and an unwavering
+                dedication to reliability and service. With us, you can trust that
+                your communication is in expert hands, enabling you to focus on
+                what truly matters—growing your business.
+              </FadeIn>
+            </div>
+            <div>
+              <RotateWrapper direction="vertical">
+                <h2 className="text-2xl font-bold">OUR STORY</h2>
+              </RotateWrapper>
+              <FadeIn className="mt-4 text-gray-700">
+                Founded by seasoned communication experts, Ring Cloud PBX was 
+                created to transform business communication by prioritizing client
+                needs. Recognizing the complexities of cloud technology, our 
+                founders aimed to simplify the process, empowering businesses 
+                with tailored solutions and essential support. At Ring Cloud PBX,
+                your success drives everything we do. With years of industry 
+                experience and a deep understanding of the evolving digital 
+                landscape, our founders envisioned a platform that not only enhances
+                communication but also fosters growth and efficiency. We believe 
+                that businesses, regardless of size, should have access to seamless,
+                scalable, and secure communication solutions without the burden of
+                technical challenges.
+              </FadeIn>
+            </div>
           </div>
         </div>
       </div>

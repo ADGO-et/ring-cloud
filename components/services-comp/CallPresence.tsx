@@ -16,7 +16,7 @@ const CallPresence = () => {
             Perfect solution for your Call Presence
           </h2>
         </RotateWrapper>
-        <FadeIn className="text-gray-700 mb-4">
+        <FadeIn className="text-gray-700 mb-4 text-lg">
           Develop a website by finding a product identity that has value and branding to become a characteristic of a company. We will also facilitate the business marketing of these products with our SEO experts so that they become a ready-to-use website and help sell a product from the company.
         </FadeIn>
         <FadeIn className="">
@@ -31,7 +31,7 @@ const CallPresence = () => {
         <Image 
           src={coverimg}
           alt="Call Presence" 
-          className="w-full max-w-md md:max-w-full rounded-lg shadow-lg" 
+          className="w-full max-w-lg md:max-w-full rounded-lg shadow-lg" 
         />
       </SlideFrom>
     </div>

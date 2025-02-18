@@ -4,10 +4,14 @@ import React from 'react';
 import RotateWrapper from "../animation/RotateWrapper";
 import FadeIn from "../animation/FadeIn";
 import SlideFrom from "../animation/SlideFrom";
+import ornament from '@/public/assets/Ornament.png';
 
 const Banner: React.FC = () => {
   return (
-    <div className="bg-gradient-to-r from-primaryColor to-blue-800 rounded-xl p-12 m-8 flex flex-col md:flex-row justify-between items-center text-white relative overflow-hidden w-full max-w-6xl mx-auto shadow-lg">
+    <div
+      className="bg-primaryColor rounded-3xl p-12 m-8 flex flex-col md:flex-row justify-between items-center text-white w-full max-w-6xl mx-auto shadow-lg py-28"
+      style={{ backgroundImage: `url(${ornament.src})` }}
+    >
       <div className="md:max-w-lg">
         <RotateWrapper direction="vertical">
           <h1 className="text-2xl font-bold">Lorem Ipsum Lorem Ipsum Lorem Ipsum</h1>
@@ -21,11 +25,6 @@ const Banner: React.FC = () => {
           Register Now
         </button>
       </SlideFrom>
-      <div className="absolute top-6 right-6 grid grid-cols-4 gap-1 opacity-50">
-        {[...Array(12)].map((_, i) => (
-          <div key={i} className="w-1.5 h-1.5 bg-white rounded-full opacity-40"></div>
-        ))}
-      </div>
     </div>
   );
 };

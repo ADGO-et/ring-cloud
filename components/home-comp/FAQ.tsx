@@ -7,7 +7,7 @@ import RotateWrapper from "../animation/RotateWrapper";
 import FadeIn from "../animation/FadeIn";
 
 export default function FAQ() {
-    const [openItem, setOpenItem] = useState<string | null>(null);
+    const [openItem, setOpenItem] = useState<string | undefined>("item-0");
 
     const faqData = [
         {
@@ -33,10 +33,10 @@ export default function FAQ() {
         },
       ];
   return (
-    <section className="flex flex-col md:flex-row justify-between items-center">
+    <section className="flex flex-col md:flex-row justify-between items-start">
       <div className="basis-full md:basis-2/5 text-center md:text-left">
         <RotateWrapper direction="vertical">
-          <h2 className="text-4xl font-bold">Frequently Asked <br/> Questions</h2>
+          <h2 className="text-4xl md:text-5xl font-bold">Frequently Asked <br/> Questions</h2>
         </RotateWrapper>
         <FadeIn className="mt-2 text-gray-500">
           Still need help? <Link href='' className="text-primaryColor font-semibold cursor-pointer hover:underline">Get Help Now</Link>
@@ -44,6 +44,7 @@ export default function FAQ() {
       </div>
 
       <Accordion 
+        value={openItem}
         type="single" 
         collapsible 
         className="mt-6 space-y-4 basis-full md:basis-3/5" 
@@ -55,8 +56,8 @@ export default function FAQ() {
               value={`item-${index}`} 
               className={`p-4 rounded-lg ${openItem === `item-${index}` ? "bg-gray-100 font-bold" : ""}`}
             >
-              <AccordionTrigger>{faq.question}</AccordionTrigger>
-              <AccordionContent className="">{faq.answer}</AccordionContent>
+              <AccordionTrigger className="text-lg">{faq.question}</AccordionTrigger>
+              <AccordionContent className="text-lg">{faq.answer}</AccordionContent>
             </AccordionItem>
           </FadeIn>
         ))}

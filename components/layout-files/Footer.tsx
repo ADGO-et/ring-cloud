@@ -12,7 +12,7 @@ import PoppingWrapper from "../animation/Popping";
 
 export default function Footer() {
   return (
-    <footer className="bg-primaryColor text-white py-10 px-6">
+    <footer className="bg-primaryColor text-white pt-36 pb-10 px-6">
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 w-[95%] mx-auto">
         {/* Left Section - About */}
         <div>
@@ -29,7 +29,7 @@ export default function Footer() {
         {/* Center Section - Contact & Social Media */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-yellow-400">Get In Touch</h3>
-          <ul className="space-y-2 text-gray-300">
+          <ul className="space-y-4 text-gray-300">
             <li className="flex items-center">
               <MapPin className="w-5 h-5 text-yellow-400 mr-2" />
               1234 Addis Ababa St, Bole, 0123
@@ -68,7 +68,7 @@ export default function Footer() {
         </div>
 
         {/* Right Section - Newsletter */}
-        <form>
+        <form className="space-y-4">
           <PoppingWrapper degree={2}>
             <h3 className="text-lg font-semibold text-yellow-400">Join Link Newsletter</h3>
           </PoppingWrapper>

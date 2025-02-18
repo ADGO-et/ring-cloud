@@ -33,7 +33,7 @@ const services = [
 
 const Experiences = () => {
   return (
-    <div className="flex flex-col items-center p-6 lg:p-12 text-center">
+    <div className="flex flex-col items-center p-6 lg:p-12 text-center text-lg">
       <div className="flex flex-col lg:items-end lg:w-[70%]">
         <Image src={sideimg} alt="side image" className="lg:block hidden top-28 left-10 w-20 h-20" />
               <style jsx global>{`
@@ -45,8 +45,9 @@ const Experiences = () => {
         <RotateWrapper direction="vertical">
           <h2 className="text-2xl lg:text-3xl font-bold mb-4">Experience the Power of Process.</h2>
         </RotateWrapper>
-        <FadeIn className="text-gray-600 max-w-2xl">
-          Instead of focusing just on the problem, we take the holistic approach so we can build a solution that works end to end.
+        <FadeIn className="text-gray-600 max-w-2xl flex flex-col items-end">
+          <span>Instead of focusing just on the problem, we take the holistic approach so we can build a</span>
+          <span>solution that works end to end.</span>
         </FadeIn>
       </div>
       <div className="w-full lg:w-[70%]">

@@ -25,7 +25,7 @@ const NewsletterSection: React.FC = () => {
           </RotateWrapper>
           <p className="mt-2 text-gray-300 text-sm">
             Molestie nunc non blandit massa enim. Venenatis urna cursus eget
-            nunc scelerisque viverra mauris in. Id aliquet risus feugiat in ante
+            nunc scelerisque <br/> viverra mauris in. Id aliquet risus feugiat in ante
             metus dictum at tempor.
           </p>
           <div className="mt-4 flex">
@@ -46,7 +46,7 @@ const NewsletterSection: React.FC = () => {
         {/* Right Section */}
         <div className="md:w-1/3 mt-8 md:mt-0 space-y-8">
           <h2 className="text-yellow-400 text-lg font-bold">Top Columnist</h2>
-          <div className="mt-4 space-y-8">
+          <div className="mt-4 space-y-12">
             {[
               { name: "Lorem Ipsum", title: "CTO of Great Company Inc." },
               { name: "Lorem Ipsum", title: "Digital Marketing Manager" },

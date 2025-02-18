@@ -34,9 +34,11 @@ const features = [
 const Offers = () => {
   return (
     <section className="py-16 bg-white mb-10 space-y-8">
-      <RotateWrapper direction="vertical">
-        <h1 className="text-primaryColor text-3xl font-bold text-center">WHAT WE OFFER</h1>
-      </RotateWrapper>
+      <div className="w-full flex justify-center">
+        <RotateWrapper direction="vertical">
+          <h1 className="text-primaryColor text-3xl font-bold">WHAT WE OFFER</h1>
+        </RotateWrapper>
+      </div>
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.slice(0, 3).map((feature, index) => (

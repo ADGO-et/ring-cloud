@@ -37,13 +37,13 @@ const extendedClients = [...clients, ...clients];
 
 const OurClients = () => {
   return (
-    <section className="pb-8 text-center">
+    <section className="text-center md:py-40 shadow-custom mb-10">
       <FadeIn className="inline-block">
         <RotateWrapper direction="vertical">
           <TitleFadeIn title="Our Clients" className="text-3xl font-bold text-gray-800" />
         </RotateWrapper>
       </FadeIn>
-      <FadeIn className="text-gray-600 mt-2">
+      <FadeIn className="text-gray-600 mt-2 text-lg">
         We are proud to partner with innovative companies. Take a look at some of
         the amazing brands that trust us to power their communications:
       </FadeIn>
@@ -54,12 +54,12 @@ const OurClients = () => {
           {extendedClients.map((client, index) => (
             <div
               key={index}
-              className="bg-white rounded-full flex items-center justify-center flex-none w-[200px] sm:w-[220px] md:w-[250px] lg:w-[300px]"
+              className="bg-white rounded-full flex items-center justify-center flex-none w-[250px] sm:w-[270px] md:w-[300px] lg:w-[350px]"
             >
               <Image
                 src={client.logo}
                 alt={client.name}
-                className="border-[#c8e0ff] border-2 rounded-full py-4 px-6 h-24 w-26 shadow-md"
+                className="border-[#c8e0ff] border-2 rounded-full h-24 w-26 shadow-md"
               />
             </div>
           ))}
@@ -71,12 +71,12 @@ const OurClients = () => {
           {extendedClients.map((client, index) => (
             <div
               key={index}
-              className="bg-white rounded-full flex items-center justify-center flex-none w-[200px] sm:w-[220px] md:w-[250px] lg:w-[300px]"
+              className="bg-white rounded-full flex items-center justify-center flex-none w-[250px] sm:w-[270px] md:w-[300px] lg:w-[350px]"
             >
               <Image
                 src={client.logo}
                 alt={client.name}
-                className="border-[#c8e0ff] border-2 rounded-full py-4 px-6 h-24 w-26 shadow-md"
+                className="border-[#c8e0ff] border-2 rounded-full shadow-md h-24 w-26"
               />
             </div>
           ))}
@@ -96,7 +96,7 @@ const OurClients = () => {
         .animate-marquee {
           display: flex;
           width: max-content;
-          animation: marquee 12s linear infinite;
+          animation: marquee 18s linear infinite;
         }
         @keyframes marquee-reverse {
           from {
@@ -109,7 +109,10 @@ const OurClients = () => {
         .animate-marquee-reverse {
           display: flex;
           width: max-content;
-          animation: marquee-reverse 12s linear infinite;
+          animation: marquee-reverse 18s linear infinite;
+        }
+        .shadow-custom {
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
         }
       `}</style>
     </section>
