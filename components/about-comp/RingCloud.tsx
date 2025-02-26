@@ -8,7 +8,7 @@ export default function RingCloudPBX() {
   return (
     <div className="bg-white text-gray-900 pt-24 pb-16">
       {/* Hero Section */}
-      <div className="max-w-6xl mx-auto p-6">
+      <div className="mx-auto p-6">
         <Image
           src={aboutImg}
           alt="Ring Cloud PBX Building"
@@ -18,7 +18,7 @@ export default function RingCloudPBX() {
         />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="mx-auto px-6">
         <h2 className="text-3xl font-bold text-gray-900 mt-10">
           YOUR TRUSTED RING CLOUD PBX
         </h2>
@@ -45,7 +45,7 @@ export default function RingCloudPBX() {
 
       {/* Why Choose Us Section */}
       <div className=" py-12 mt-12">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+        <div className="mx-auto px-6 text-center">
           <h3 className="text-3xl font-bold text-gray-900">
             WHY CHOOSE RING CLOUD PBX
           </h3>
@@ -53,7 +53,7 @@ export default function RingCloudPBX() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="p-6 bg-white rounded-lg shadow-md flex flex-col items-center"
+                className="p-6 bg-white rounded-lg shadow-md flex flex-col items-center transform transition-transform duration-300 hover:scale-105"
               >
                 <span className="text-4xl">{feature.icon}</span>
                 <h4 className="font-semibold text-lg mt-4">{feature.title}</h4>
@@ -67,7 +67,7 @@ export default function RingCloudPBX() {
       </div>
 
       {/* About Us Section */}
-      <div className="max-w-6xl mx-auto px-6 mt-12 text-center">
+      <div className="mx-auto px-6 mt-12 text-center shadow-lg rounded-lg p-5">
         <h3 className="text-3xl font-bold text-gray-900">ABOUT US</h3>
         <p className="mt-4 text-gray-700 leading-relaxed">
           At Ring Cloud PBX, we specialize in transforming communication for
@@ -79,10 +79,10 @@ export default function RingCloudPBX() {
       </div>
 
       {/* Mission and Vision Section */}
-      <div className="max-w-6xl mx-auto px-6 mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 pb-24">
+      <div className="mx-auto px-6 mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 pb-24 max-w-5xl">
         {" "}
         {/* Added padding bottom for footer */}
-        <div className="p-6 bg-white rounded-lg shadow-md text-center flex flex-col items-center">
+        <div className="p-6 bg-white rounded-lg shadow-md text-center flex flex-col items-center transform transition-transform duration-300 hover:scale-105">
           <div className="flex justify-center items-center w-16 h-16  rounded-full mb-4">
             <Flag className="w-10 h-10 text-blue-900" />
           </div>
@@ -92,7 +92,7 @@ export default function RingCloudPBX() {
             solutions, optimizing efficiency and customer engagement.
           </p>
         </div>
-        <div className="p-6 bg-white rounded-lg shadow-md text-center flex flex-col items-center">
+        <div className="p-6 bg-white rounded-lg shadow-md text-center flex flex-col items-center transform transition-transform duration-300 hover:scale-105">
           <div className="flex justify-center items-center w-16 h-16  rounded-full mb-4">
             <Eye className="w-10 h-10 text-blue-900" />
           </div>
