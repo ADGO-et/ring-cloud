@@ -6,12 +6,11 @@ import React from 'react'
 const page = () => {
   return (
     <div>
-    <div className='md:m-20 mx-6 my-20'>
-      <Offers/>
-      <Features/>
-      
-    </div>
-    <CallPresence/>
+      <div className='md:m-20 mx-6 my-20'>
+        <Offers/>
+        <Features/> 
+      </div>
+      <CallPresence/>
     </div>
   )
 }

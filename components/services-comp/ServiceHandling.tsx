@@ -10,11 +10,11 @@ import FadeIn from '../animation/FadeIn';
 import SlideFrom from '../animation/SlideFrom';
 const ServiceHandling = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center gap-8 py-12 ml-50 mr-50">
+    <div className="flex flex-col md:flex-row items-center py-12 w-full md:w-[80%] mx-auto gap-y-10">
       {/* Left Column - Image */}
       <div className="w-full md:w-1/2">
       <SlideFrom from="left" className="md:w-3/4 mt-6 md:mt-0 flex justify-center basis-3/4 ml-10">
-        <Image src = {servicesHandling} alt="Service Handling" width={500} height={300} className="rounded-2xl shadow-lg" /> </SlideFrom>
+        <Image src = {servicesHandling} alt="Service Handling" width={500} height={300} className="" /> </SlideFrom>
       </div>
       {/* Right Column - Text */}
       <div className="w-full md:w-1/2 text-center md:text-left">
