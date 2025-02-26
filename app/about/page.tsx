@@ -3,7 +3,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className='my-4'>
+    <div className='w-full md:w-[80%] lg:w-[75%] mx-auto my-4'>
       <RingCloudPBX />
     </div>
   )
