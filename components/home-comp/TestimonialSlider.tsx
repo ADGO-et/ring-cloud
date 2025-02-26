@@ -73,7 +73,7 @@ export default function TestimonialSlider() {
       <h2 className="text-2xl font-bold text-center text-[#002F6C]">
         What Our Clients Say About Us
       </h2>
-      <div className="relative w-full max-w-4xl pb-3">
+      <div className="relative w-full max-w-6xl pb-3">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           pagination={{
@@ -98,7 +98,7 @@ export default function TestimonialSlider() {
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`bg-white p-6 rounded-lg shadow-lg w-full max-w-sm mx-auto transition-all duration-300 ${
+                className={`bg-white p-6 rounded-lg shadow-lg w-full max-w-md mx-auto transition-all duration-300 ${
                   index === activeIndex + 1
                     ? "scale-110 "
                     : "scale-95 opacity-80"

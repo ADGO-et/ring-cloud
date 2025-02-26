@@ -6,6 +6,7 @@ import safaricom from "@/public/assets/safari.svg";
 import google from "@/public/assets/google.svg";
 import visa from "@/public/assets/visa.svg";
 import amazon from "@/public/assets/amazon.svg";
+import Marquee from "react-fast-marquee";
 export default function Clients() {
   const clients = [
     { name: "National Bank of Ethiopia", logo: cbe },
@@ -18,15 +19,22 @@ export default function Clients() {
   ];
 
   return (
-    <div className="flex py-4">
-      {clients.map((client, index) => (
-        <div
-          key={index}
-          className="bg-white rounded-full flex items-center justify-center  w-[250px] sm:w-[270px] md:w-[300px] lg:w-[350px]"
-        >
-          <Image src={client.logo} alt={client.name} />
-        </div>
-      ))}
+    <div className="py-4">
+      <Marquee direction="left" speed={50} pauseOnHover className="mb-12">
+        {clients.map((client, index) => (
+          <div
+            key={index}
+            className="bg-white px-4 py-2 mx-8  flex items-center justify-center w-40 h-16"
+          >
+            <Image
+              src={client.logo}
+              alt={client.name}
+              width={180}
+              height={70}
+            />
+          </div>
+        ))}
+      </Marquee>
     </div>
   );
 }

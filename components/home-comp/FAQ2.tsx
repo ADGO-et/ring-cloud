@@ -63,7 +63,7 @@ export default function FAQ() {
         value={openItem}
         type="single"
         collapsible
-        className=" space-y-4 basis-full md:basis-3/5 h-60 overflow-y-scroll"
+        className=" space-y-4 basis-full md:basis-3/5 "
         onValueChange={(value) => setOpenItem(value)}
       >
         {faqData.map((faq, index) => (
