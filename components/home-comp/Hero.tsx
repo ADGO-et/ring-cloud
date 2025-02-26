@@ -11,15 +11,15 @@ export default function Hero() {
           dedicated to helping businesses leverage cloud technology for
           transformative communication.
         </p>
-        <p className="flex-wrap text-center lg:text-3xl">
-          We do this through a number of services to provide comprehensive
+        <p className="flex-wrap text-center lg:text-2xl">
+          We do this through a number of services to provide comprehensive<br/>
           solutions for your business. Scroll down to read about what we can do
           for you.
         </p>
-        <Button className="bg-white text-black w-fit px-4 lg:text-2xl hover:text-white hover:bg-black">
+        <Button className="bg-white text-black w-fit px-4 lg:text-lg hover:text-white hover:bg-primaryColor">
           Create Account
         </Button>
-        <p className="text-3xl">Find us on</p>
+        <p className="text-2xl">Find us on</p>
         <div className="flex space-x-4 pb-8">
           <Link href="#" className="lg:text-white text-black hover:text-white">
             <FaFacebookF />

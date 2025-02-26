@@ -12,11 +12,11 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 import pro from "@/public/assets/user.png";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface Feedback {
   name: string;
-  image: string;
+  image: StaticImageData;
   title: string;
   rating: number;
   review: string;
@@ -69,7 +69,7 @@ export default function TestimonialSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="py-12 px-4 relative flex flex-col items-center">
+    <div className="py-12 px-4 relative flex flex-col items-center mb-16">
       <h2 className="text-2xl font-bold text-center text-[#002F6C]">
         What Our Clients Say About Us
       </h2>
@@ -79,7 +79,7 @@ export default function TestimonialSlider() {
           pagination={{
             el: ".custom-pagination",
             clickable: true,
-            dynamicBullets: false, // Ensures all dots stay fixed
+            dynamicBullets: false, 
           }}
           navigation={{
             nextEl: ".custom-next",
@@ -98,10 +98,10 @@ export default function TestimonialSlider() {
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`bg-white p-6 rounded-lg shadow-lg w-full max-w-md mx-auto transition-all duration-300 ${
+                className={`bg-white p-8 rounded-lg shadow-lg w-full max-w-lg mx-auto transition-all duration-300 ${
                   index === activeIndex + 1
-                    ? "scale-110 "
-                    : "scale-95 opacity-80"
+                    ? "scale-120"
+                    : "scale-100"
                 }`}
               >
                 <div className="flex items-center">
