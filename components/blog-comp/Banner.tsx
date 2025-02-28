@@ -30,7 +30,7 @@ const Banner: React.FC = () => {
         className="flex flex-col items-center md:items-start"
       >
         <PoppingWrapper degree={2}>
-          <button className="bg-yellow-400 text-black font-semibold px-4 py-2 rounded-lg mt-4 md:mt-0 hover:bg-yellow-500 transition">
+          <button className="bg-white text-black font-semibold px-4 py-2 rounded-lg mt-4 md:mt-0 hover:bg-yellow-500 transition">
             Register Now
           </button>
         </PoppingWrapper>

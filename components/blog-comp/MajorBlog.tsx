@@ -14,19 +14,19 @@ const MajorBlog = async () => {
 
   return (
     <div className="">
-      <div className="w-full h-80 md:h-96 bg-yellow-400 flex justify-center items-center text-white rounded-b-3xl">
+      <div className="w-full h-80 md:h-96 bg-primaryColor flex justify-center items-center text-white rounded-b-3xl">
         <div className="w-[80%] flex flex-col items-start justify-center mt-12">
           <RotateWrapper direction="vertical">
-            <p className="font-bold text-3xl text-primaryColor">
+            <p className="font-bold text-3xl text-white">
               Let&apos;s Become
             </p>
           </RotateWrapper>
           <RotateWrapper direction="vertical">
-            <h1 className="text-3xl md:text-6xl font-bold text-primaryColor">
+            <h1 className="text-3xl md:text-6xl font-bold text-white">
               Success Entrepreneurs
             </h1>
           </RotateWrapper>
-          <FadeIn className="text-black font-bold">
+          <FadeIn className="text-white font-bold">
             With Lorem Ipsum
           </FadeIn>
         </div>

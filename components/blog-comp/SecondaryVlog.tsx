@@ -34,19 +34,19 @@ const SecondaryVlog = async () => {
       </div>
 
       <div className="basis-full lg:basis-1/3 space-y-6 flex flex-col items-center">
-        <div className="bg-yellow-400 p-8 rounded-lg w-full">
+        <div className="bg-primaryColor p-8 rounded-lg w-full">
           <div className="flex flex-col items-start space-y-2">
             <RotateWrapper direction="vertical">
-              <p className="font-bold text-md">Signup to our newsletter</p>
+              <p className="font-bold text-md text-white">Signup to our newsletter</p>
             </RotateWrapper>
-            <FadeIn className="text-gray-500">
+            <FadeIn className="text-white">
               Fames ac turpis egestas integer nulla pellentesque dignissim enim.
             </FadeIn>
             <Input type="email" className="bg-white w-full" />
             <div className="flex items-center justify-between gap-2 w-full">
               <div className="flex items-center gap-2">
                 <input type="checkbox" />
-                <p className="text-gray-500 text-sm">
+                <p className="text-white text-sm">
                   Agree to terms of services
                 </p>
               </div>

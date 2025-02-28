@@ -18,19 +18,14 @@ import PoppingWrapper from '@/components/animation/Popping';
 
 const pricingPlans = [
   {
-    name: 'Standard',
-    price: '200birr',
-    features: ['Call Presence', 'Call transfer', 'IVR menu', 'Mobile App'],
-  },
-  {
     name: 'Contact Center',
-    price: '150birr',
-    features: ['All Standard Features', 'Automated call', 'Reporting and Analytics', 'Call extensions'],
+    price: '1500birr',
+    features: ['All advanced features', 'Automated call distribution', 'Reporting and Analytics', 'Call restrictions'],
   },
   {
     name: 'Advanced',
-    price: '1500birr',
-    features: ['All Standard Features', 'Call forwarding', 'Call extensions', 'Call monitoring'],
+    price: '300birr',
+    features: ['All Standard Features', 'Call conferencing', 'Call distribution', 'Call recording'],
   },
 ];
 
@@ -41,23 +36,23 @@ export default function PricingPage() {
     <div className="min-h-screen flex justify-center items-center">
       <div className="max-w-6xl my-20 mx-auto p-6">
         <TitleFadeIn title="Plans & Pricing" className="text-2xl font-bold text-gray-800 mb-6 text-center" />
-        <div className="shadow-lg p-6 rounded-2xl">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-end">
+        <div className="shadow-lg p-8 rounded-2xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-end">
             {pricingPlans.map((plan, planIndex) => (
-              <SlideFrom key={plan.name} from="left" className={`p-6 rounded-2xl ${plan.name === 'Advanced' ? 'bg-blue-900 text-white min-h-[400px]' : 'bg-white text-gray-800 min-h-[350px]'} flex flex-col items-center text-center`} delay={planIndex * 0.2}>
-                {plan.name === 'Advanced' && (
-                  <PoppingWrapper degree={3}>
+              <SlideFrom key={plan.name} from="left" className={`p-8 rounded-2xl ${plan.name === 'Contact Center' ? 'bg-blue-900 text-white min-h-[400px]' : 'bg-white text-gray-800 min-h-[350px]'} flex flex-col items-center text-center`} delay={planIndex * 0.2}>
+                {plan.name === 'Contact Center' && (
+                  <div>
                     <div className='flex w-full justify-end items-center mb-6'>
-                      <p className='text-white bg-black w-fit py-1 px-3 text-end text-xs rounded-xl'>Most Popular</p>
+                      <p className='w-fit py-3 px-3'></p>
                     </div>
-                  </PoppingWrapper>
+                  </div>
                 )}
                 <h3 className="text-xl font-bold">{plan.price}/month</h3>
                 <p className="mt-2 font-semibold">{plan.name}</p>
                 <ul className="mt-4 space-y-4 text-left w-full">
                   {plan.features.map((feature, featureIndex) => (
                     <SlideFrom key={featureIndex} from="left" className="flex items-center space-x-2" delay={planIndex * 0.2 + featureIndex * 0.1}>
-                      <span className="text-lg"><IoCheckmarkCircle className={plan.name === 'Advanced' ? '' : 'text-primaryColor'}/></span>
+                      <span className="text-lg"><IoCheckmarkCircle className={plan.name === 'Contact Center' ? '' : 'text-primaryColor'}/></span>
                       <span>{feature}</span>
                     </SlideFrom>
                   ))}
@@ -65,7 +60,7 @@ export default function PricingPage() {
                 <Dialog>
                   <DialogTrigger asChild>
                     <button
-                      className={`mt-4 w-full ${plan.name === 'Advanced' ? 'bg-black hover:text-white' : 'bg-gray-500 text-white cursor-pointer'} rounded-3xl py-2`}
+                      className={`mt-4 w-full ${plan.name === 'Contact Center' ? 'bg-black hover:text-white' : 'bg-gray-500 text-white cursor-pointer'} rounded-3xl py-2`}
                       onClick={() => setSelectedPlan(plan.name)}
                     >
                       Choose Plan
