@@ -42,7 +42,7 @@ export default function FAQ() {
     },
   ];
   return (
-    <section className="flex flex-col md:flex-row justify-between items-start px-16 py-8 md:w-[90%] mx-auto">
+    <section className="flex flex-col md:flex-row justify-between items-start px-16 py-8 md:w-[90%] mx-auto gap-y-8">
       <div className="basis-full md:basis-2/5 text-center md:text-left space-y-3 pt-5">
         <h2 className="text-4xl md:text-5xl font-bold">
           Frequently Asked <br /> Questions

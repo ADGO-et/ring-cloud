@@ -22,7 +22,7 @@ const EditorsPick = async () => {
               className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
             >
               <Image
-                src={article.thumbnail || "/assets/sample.png"} // Use blog thumbnail or fallback
+                src={article.thumbnail || "/assets/sample.png"} 
                 alt={article.title}
                 width={281.2}
                 height={277}

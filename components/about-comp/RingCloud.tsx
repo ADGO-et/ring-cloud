@@ -18,7 +18,7 @@ export default function RingCloudPBX() {
       </div>
 
       <div className="mx-auto px-6">
-        <h2 className="text-3xl font-bold text-gray-900 mt-10">
+        <h2 className="text-4xl font-bold text-gray-900 mt-10">
           YOUR TRUSTED RING CLOUD PBX
         </h2>
         <p className="mt-4 text-gray-700 leading-relaxed">
@@ -31,7 +31,7 @@ export default function RingCloudPBX() {
           matters—growing your business.
         </p>
 
-        <h3 className="text-2xl font-semibold mt-8">OUR STORY</h3>
+        <h3 className="text-3xl font-semibold mt-8">OUR STORY</h3>
         <p className="mt-4 text-gray-700 leading-relaxed">
           Founded by seasoned communication experts, Ring Cloud PBX was created
           to transform business communication by prioritizing client needs.
@@ -68,7 +68,7 @@ export default function RingCloudPBX() {
       {/* About Us Section */}
       <div className="mx-auto px-6 mt-12 text-center shadow-lg rounded-lg p-5">
         <h3 className="text-3xl font-bold text-gray-900">ABOUT US</h3>
-        <p className="mt-4 text-gray-700 leading-relaxed">
+        <p className="mt-4 text-gray-700 leading-relaxed text-md">
           At Ring Cloud PBX, we specialize in transforming communication for
           businesses through cutting-edge cloud technology. By offering tailored
           solutions, we improve organizations with reliable voice, automation,
@@ -85,7 +85,7 @@ export default function RingCloudPBX() {
           <div className="flex justify-center items-center w-16 h-16  rounded-full mb-4">
             <Flag className="w-10 h-10 text-blue-900" />
           </div>
-          <h4 className="text-xl font-semibold">OUR MISSION</h4>
+          <h4 className="text-2xl font-semibold">OUR MISSION</h4>
           <p className="text-gray-700 mt-2">
             To empower businesses with comprehensive cloud-based communication
             solutions, optimizing efficiency and customer engagement.
@@ -95,7 +95,7 @@ export default function RingCloudPBX() {
           <div className="flex justify-center items-center w-16 h-16  rounded-full mb-4">
             <Eye className="w-10 h-10 text-blue-900" />
           </div>
-          <h4 className="text-xl font-semibold">OUR VISION</h4>
+          <h4 className="text-2xl font-semibold">OUR VISION</h4>
           <p className="text-gray-700 mt-2">
             To be the leading provider of innovative communication solutions,
             setting benchmarks in reliability, scalability, and customer

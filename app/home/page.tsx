@@ -11,13 +11,14 @@ import Clients from "@/components/home-comp/Clients";
 import AllOurService from "@/components/home-comp/AllOurService";
 import Experience from "@/components/home-comp/Experience";
 import TestimonialSlider from "@/components/home-comp/TestimonialSlider";
-// import ClientsSection from '@/components/home-comp/ClientsSection'
+import ClientsSection from '@/components/home-comp/ClientsSection'
 
 const page = () => {
   return (
     <div className="">
       <Hero />
       <Clients />
+      {/* <ClientsSection/> */}
       <AllOurService />
       <Experience />
       <TestimonialSlider />

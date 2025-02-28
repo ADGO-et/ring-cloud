@@ -66,8 +66,8 @@ export default function AllOurService() {
           <p className="font-bold text-2xl flex-wrap text-center">
             Our comprehensive services will cover all your needs.
           </p>
-          <p className="text-xs flex-wrap text-center">
-            We don't just help with your IT needs. We focus on the entire
+          <p className="text-md flex-wrap text-center">
+            We don&apos;t just help with your IT needs. We focus on the entire
             ecosystem surrounding it. Bringing together people, process, and
             technology, we pride ourselves on delivering solutions that work in
             reality. Not theory.

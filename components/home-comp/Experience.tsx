@@ -17,7 +17,7 @@ export default function Experience() {
         </div>
 
         {/* Grid Section with Centered Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 md:px-20 py-8 place-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-20 px-4 md:px-20 py-8 place-items-center">
           {[
             {
               title: "Cloud PBX",
@@ -47,7 +47,7 @@ export default function Experience() {
               <p className="text-lg font-semibold text-gray-900">
                 {service.title}
               </p>
-              <p className="text-gray-500 text-sm mt-2">
+              <p className="text-gray-500 text-md mt-2">
                 {service.description}
               </p>
             </div>
